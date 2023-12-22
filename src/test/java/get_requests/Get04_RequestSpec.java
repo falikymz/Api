@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class Get04 extends JsonPlaceHolderBaseUrl {
+public class Get04_RequestSpec extends JsonPlaceHolderBaseUrl {
     /*
         Given
             https://jsonplaceholder.typicode.com/todos/23

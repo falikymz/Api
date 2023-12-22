@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 
-public class Get06 extends HerOkuAppBaseUrl {
+public class Get06_QueryParams extends HerOkuAppBaseUrl {
 
      /*
        Given
