@@ -7,10 +7,9 @@ import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
-public class Task2 extends JsonPlaceHolderBaseUrl {
+public class Task02 extends JsonPlaceHolderBaseUrl {
         /*Task 2:
     Given URL:
     https://jsonplaceholder.typicode.com/users/3

@@ -8,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 
-public class Task1 extends JsonPlaceHolderBaseUrl {
+public class Task01 extends JsonPlaceHolderBaseUrl {
             /*
             Task 1:
         Given URL:
