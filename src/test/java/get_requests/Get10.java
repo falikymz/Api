@@ -47,6 +47,9 @@ public class Get10 extends JsonPlaceHolderBaseUrl {
                 1,
                 "quis ut nam facilis et officia qui",
                 false);
+        expectedData.put("Via","1.1 vegur");
+        expectedData.put("Server","cloudflare");
+
 
         //Request gönderilecek Response alınacak
         Response response =given(spec).when().get("{pp1}/{pp2}");
@@ -58,5 +61,9 @@ public class Get10 extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
+        assertEquals(expectedData.get("Via"),response.header("Via"));
+        assertEquals(expectedData.get("Server"),response.header("Server"));
+       // assertEquals("1.1 vegur",response.header("Via"));
+       // assertEquals("cloudfire",response.header("Server"));
     }
 }
