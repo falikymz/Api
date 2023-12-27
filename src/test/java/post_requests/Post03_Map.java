@@ -75,8 +75,7 @@ And response body should be like {
         assertEquals(payLoad.get("depositpaid"),((Map)actualData.get("booking")).get("depositpaid"));
         assertEquals(bookings.get("checkin"),(((Map)((Map)actualData.get("booking")).get("depositpaid"))).get("checkin"));
         assertEquals(bookings.get("checkout"),(((Map)((Map)actualData.get("booking")).get("depositpaid"))).get("checkout"));
-
-
+        
 
 
 
