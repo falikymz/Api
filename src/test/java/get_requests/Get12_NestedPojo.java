@@ -3,8 +3,8 @@ package get_requests;
 import base_urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
-import pojos.HerokuAppPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -38,15 +38,15 @@ public class Get12_NestedPojo extends HerOkuAppBaseUrl {
         spec.pathParams("pp1","booking","pp2","837");
 
         //Beklenen data oluşturulur
-        BookingPojo bookings=new BookingPojo("2018-01-01","2019-01-01");
-        HerokuAppPojo expectedData= new HerokuAppPojo("John","Smith",111,true,bookings,"Breakfast");
+        BookingDatesPojo bookings=new BookingDatesPojo("2018-01-01","2019-01-01");
+        BookingPojo expectedData= new BookingPojo("John","Smith",111,true,bookings,"Breakfast");
 
         //Request gönderilir response alınır
         Response response =given(spec).when().get("{pp1}/{pp2}");
         response.prettyPrint();
 
         //doğrulamalar yapılır
-        HerokuAppPojo actualData =response.as(HerokuAppPojo.class);
+        BookingPojo actualData =response.as(BookingPojo.class);
         assertEquals(200,response.statusCode());
         assertEquals(expectedData.getFirstname(),actualData.getFirstname());
         assertEquals(expectedData.getLastname(),actualData.getLastname());

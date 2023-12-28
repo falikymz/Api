@@ -6,12 +6,12 @@ public class HerokuRootPojo {
      */
 
     private Integer bookingid;
-    private HerokuAppPojo booking;
+    private BookingPojo booking;
 
     public HerokuRootPojo() {
     }
 
-    public HerokuRootPojo(Integer bookingid, HerokuAppPojo booking) {
+    public HerokuRootPojo(Integer bookingid, BookingPojo booking) {
         this.bookingid = bookingid;
         this.booking = booking;
     }
@@ -24,11 +24,11 @@ public class HerokuRootPojo {
         this.bookingid = bookingid;
     }
 
-    public HerokuAppPojo getBooking() {
+    public BookingPojo getBooking() {
         return booking;
     }
 
-    public void setBooking(HerokuAppPojo booking) {
+    public void setBooking(BookingPojo booking) {
         this.booking = booking;
     }
 
