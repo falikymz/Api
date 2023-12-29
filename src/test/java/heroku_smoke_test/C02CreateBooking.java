@@ -49,6 +49,7 @@ public class C02CreateBooking extends HerOkuAppBaseUrl {
     }
 }
      */
+    public static int id;
 
     @Test
     public void bookingOlusturTest() {
@@ -63,6 +64,8 @@ public class C02CreateBooking extends HerOkuAppBaseUrl {
         Response response =given(spec).body(payLoad).when().post("{pp1}");
         response.prettyPrint();
 
+        id=response.jsonPath().getInt("bookingid");
+
         //Doğrulamalar yapılır
         HerokuRootPojo actualData = response.as(HerokuRootPojo.class);
         assertEquals(200,response.statusCode());
@@ -72,10 +75,6 @@ public class C02CreateBooking extends HerOkuAppBaseUrl {
         assertEquals(payLoad.getDepositpaid(),actualData.getBooking().getDepositpaid());
         assertEquals(bookingDates.getCheckin(),actualData.getBooking().getBookingdates().getCheckin());
         assertEquals(bookingDates.getCheckout(),actualData.getBooking().getBookingdates().getCheckout());
-
-
-
-
-
+        System.out.println(id);
     }
 }

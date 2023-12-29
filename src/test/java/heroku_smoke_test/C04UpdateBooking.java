@@ -7,6 +7,7 @@ import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
 import pojos.HerokuRootPojo;
 
+import static heroku_smoke_test.C02CreateBooking.id;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
@@ -15,10 +16,10 @@ public class C04UpdateBooking extends HerOkuAppBaseUrl {
 
     @Test
     public void updateBookingTest() {
-    spec.pathParams("pp1","booking","pp2",1711);
+    spec.pathParams("pp1","booking","pp2",id);
 
         BookingDatesPojo bookingDates=new BookingDatesPojo("2018-01-01","2019-01-01");
-        BookingPojo payLoad=new BookingPojo("Ali","Can",111,true,bookingDates,"kahvalti");
+        BookingPojo payLoad=new BookingPojo("Peter","Parker",999,true,bookingDates,"kahve");
 
         // Request gönderilir response alınır
         Response response =given(spec).body(payLoad).when().put("{pp1}/{pp2}");
