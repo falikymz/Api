@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class Authentication {
+public class HerokuAppAuthentication {
 
     public static String generateToken(){
         String credential="{\n" +
